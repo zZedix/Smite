@@ -380,8 +380,8 @@ class BackupService:
                             "success": False,
                             "error": f"Restore failed: {str(e)}. Rolled back to previous state."
                         }
-                    except:
-                        pass
+                except Exception:
+                    pass
                 return {"success": False, "error": f"Restore failed: {str(e)}"}
             
             finally:
