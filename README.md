@@ -17,6 +17,7 @@
   [![Docker](https://img.shields.io/badge/Docker-24.0+-2496ED.svg)](https://www.docker.com/)
   [![Nginx](https://img.shields.io/badge/Nginx-1.25+-009639.svg)](https://www.nginx.com/)
   [![SQLite](https://img.shields.io/badge/SQLite-3.42+-003B57.svg)](https://www.sqlite.org/)
+  [![Architecture](https://img.shields.io/badge/Architecture-amd64%20%7C%20arm64-orange.svg)](https://github.com/zZedix/Smite)
 </div>
 
 ---
@@ -29,12 +30,14 @@
 - **CLI Tools**: Powerful command-line tools for management
 - **Telegram Bot**: Panel statistics and automatic backups via Telegram
 - **GOST Forwarding**: Forward traffic from Iran nodes to Foreign servers with support for TCP, UDP, WebSocket, gRPC, and TCPMux
+- **Multi-Architecture**: Native support for both x86_64 (amd64) and ARM64 (aarch64) servers
 
 ---
 
 ## 📋 Prerequisites
 
 - Docker and Docker Compose installed
+- **Supported architectures**: x86_64 (amd64), ARM64 (aarch64)
 - For Iran servers, install Docker first:
   ```bash
   curl -fsSL https://raw.githubusercontent.com/manageitir/docker/main/install-ubuntu.sh | sh
