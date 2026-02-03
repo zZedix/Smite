@@ -17,7 +17,7 @@ from fastapi.staticfiles import StaticFiles
 
 from app.config import settings
 from app.database import init_db
-from app.routers import nodes, tunnels, panel, status, logs, auth, core_health
+from app.routers import nodes, tunnels, panel, status, logs, auth, core_health, backup
 from app.routers import settings as settings_router
 from app.node_server import NodeServer
 from app.gost_forwarder import gost_forwarder
@@ -759,6 +759,7 @@ app.include_router(tunnels.router, prefix="/api/tunnels", tags=["tunnels"])
 app.include_router(status.router, prefix="/api/status", tags=["status"])
 app.include_router(logs.router, prefix="/api/logs", tags=["logs"])
 app.include_router(core_health.router, prefix="/api/core-health", tags=["core-health"])
+app.include_router(backup.router)
 app.include_router(settings_router.router)
 
 static_dir = os.path.join(os.path.dirname(__file__), "static")

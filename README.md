@@ -27,6 +27,7 @@
 - **Multiple Tunnel Types**: Support for TCP, UDP, WebSocket, gRPC, TCPMux via GOST, Backhaul, Rathole, Chisel, and FRP
 - **Unified Node Management**: Iran and Foreign nodes are manageable from a single panel for reverse tunnels
 - **Web UI**: Modern, intuitive web interface with real-time connection status tracking
+- **Backup & Restore**: UI-based backup and restore with migration support and multi-panel safety warnings
 - **CLI Tools**: Powerful command-line tools for management
 - **Telegram Bot**: Panel statistics and automatic backups via Telegram
 - **GOST Forwarding**: Forward traffic from Iran nodes to Foreign servers with support for TCP, UDP, WebSocket, gRPC, and TCPMux
@@ -215,7 +216,35 @@ FRP (Fast Reverse Proxy) tunnels provide reliable TCP/UDP reverse tunnel functio
 
 ---
 
+## 💾 Backup & Restore
+
+### Creating a Backup
+1. Go to **Settings** in the web UI
+2. Scroll to the **Backup & Restore** section
+3. Click **Download Backup**
+4. Store the backup file securely (contains private keys)
+
+### Restoring from Backup
+1. Go to **Settings** in the web UI
+2. Click **Select Backup File** and choose your backup
+3. Review backup details (date, nodes, tunnels)
+4. Confirm that the old panel is shut down
+5. Click **Restore** to proceed
+
+### Server Migration Workflow
+1. **On Old Server**: Settings → Download Backup
+2. **On Old Server**: `docker compose down`
+3. **On New Server**: Install Smite
+4. **On New Server**: Settings → Restore → Upload backup
+5. Update DNS to point to new server IP
+6. Remove old server
+
+> ⚠️ **Warning**: Running two panels with the same data simultaneously is NOT supported and will cause conflicts.
+
+---
+
 ## 📝 License
+
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
